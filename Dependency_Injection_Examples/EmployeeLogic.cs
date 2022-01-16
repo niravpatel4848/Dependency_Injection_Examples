@@ -11,17 +11,38 @@ namespace Dependency_Injection_Examples
         /// <summary>
         /// Constructor Injection
         /// </summary>
+        //private IEmployeeData _IEmployeeData;
+
+        //public EmployeeLogic(IEmployeeData IEmployeeData)
+        //{
+        //    _IEmployeeData = IEmployeeData;
+        //}
+
+        //public List<Employee> GetAllEmployees()
+        //{
+        //    return _IEmployeeData.GetEmployees();
+        //}
+        ////////////////////////////////////////////////////////////
+
+        //////////////////////////////////////////////////////////////
+        ///Property Injection
+        ////////////////////////////////////////////////////////////
         private IEmployeeData _IEmployeeData;
-
-        public EmployeeLogic(IEmployeeData IEmployeeData)
+        public IEmployeeData IEmployeeDataProperty
         {
-            _IEmployeeData = IEmployeeData;
+            set
+            {
+                this._IEmployeeData = value;
+            }
+            get
+            {
+                return _IEmployeeData;
+            }
         }
-
         public List<Employee> GetAllEmployees()
         {
             return _IEmployeeData.GetEmployees();
         }
-        ////////////////////////////////////////////////////////////
+        ///////////////////////////////////////////////////////////////////
     }
 }

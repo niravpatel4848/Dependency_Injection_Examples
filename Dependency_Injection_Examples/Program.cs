@@ -10,7 +10,14 @@ namespace Dependency_Injection_Examples
     {
         static void Main(string[] args)
         {
-            EmployeeLogic employeeLogic = new EmployeeLogic(new EmployeeData());
+            ///for constructor injection///////////////
+            ///EmployeeLogic employeeLogic = new EmployeeLogic(new EmployeeData());
+            ///////////////////////////////////////////////////////////////////
+            ///
+            ///for property injection///////////////
+            EmployeeLogic employeeLogic = new EmployeeLogic();
+            employeeLogic.IEmployeeDataProperty = new EmployeeData();
+            ///////////////////////////////////////////////////////////////////
 
             List<Employee> EmployeeList = employeeLogic.GetAllEmployees();
 
