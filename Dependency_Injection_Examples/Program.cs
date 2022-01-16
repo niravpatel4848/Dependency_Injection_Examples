@@ -15,11 +15,15 @@ namespace Dependency_Injection_Examples
             ///////////////////////////////////////////////////////////////////
             ///
             ///for property injection///////////////
-            EmployeeLogic employeeLogic = new EmployeeLogic();
-            employeeLogic.IEmployeeDataProperty = new EmployeeData();
+            //EmployeeLogic employeeLogic = new EmployeeLogic();
+            //employeeLogic.IEmployeeDataProperty = new EmployeeData();
             ///////////////////////////////////////////////////////////////////
+            ///
+            ////for method injection///////////
+            EmployeeLogic employeeLogic = new EmployeeLogic();
+            List<Employee> EmployeeList = employeeLogic.GetAllEmployees( new EmployeeData());
 
-            List<Employee> EmployeeList = employeeLogic.GetAllEmployees();
+            //List<Employee> EmployeeList = employeeLogic.GetAllEmployees();
 
             foreach (Employee emp in EmployeeList)
             {

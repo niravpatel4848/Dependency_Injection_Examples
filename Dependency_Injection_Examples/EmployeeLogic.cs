@@ -27,22 +27,35 @@ namespace Dependency_Injection_Examples
         //////////////////////////////////////////////////////////////
         ///Property Injection
         ////////////////////////////////////////////////////////////
-        private IEmployeeData _IEmployeeData;
-        public IEmployeeData IEmployeeDataProperty
+        //private IEmployeeData _IEmployeeData;
+        //public IEmployeeData IEmployeeDataProperty
+        //{
+        //    set
+        //    {
+        //        this._IEmployeeData = value;
+        //    }
+        //    get
+        //    {
+        //        return _IEmployeeData;
+        //    }
+        //}
+        //public List<Employee> GetAllEmployees()
+        //{
+        //    return _IEmployeeData.GetEmployees();
+        //}
+        ///////////////////////////////////////////////////////////////////
+        ///
+
+        //////////////Method Injection//////////////////
+        /////////////////////////////////////////////////
+
+        public IEmployeeData _IEmployeeData;
+
+        public List<Employee> GetAllEmployees(IEmployeeData IEmployeeData)
         {
-            set
-            {
-                this._IEmployeeData = value;
-            }
-            get
-            {
-                return _IEmployeeData;
-            }
-        }
-        public List<Employee> GetAllEmployees()
-        {
+            _IEmployeeData = IEmployeeData;
             return _IEmployeeData.GetEmployees();
         }
-        ///////////////////////////////////////////////////////////////////
+        ////////////////////////////////////////////////////
     }
 }
